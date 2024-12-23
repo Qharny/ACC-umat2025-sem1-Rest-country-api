@@ -34,7 +34,7 @@ const CountryCard = ({ country }: CountryCardProps) => {
         </p>
         <div className="mt-2 flex justify-between text-sm">
           <span>{country.region}</span>
-          <span>{population.toLocaleString()}</span>
+          <span>{country.population.toLocaleString()}</span>
         </div>
       </div>
     </Card>
