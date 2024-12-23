@@ -54,4 +54,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Author
 
-- **Manasseh Kabutey** - [Your LinkedIn Profile](https://www.linkedin.com/in/manasseh-kabutey)
+- **Manasseh Kabutey** - [LinkedIn Profile](https://www.linkedin.com/in/manasseh-kabutey)
