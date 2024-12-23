@@ -1,69 +1,57 @@
-# Welcome to your Lovable project
+# Globe Explorer
 
-## Project info
+Globe Explorer is a web application that allows users to explore various countries around the world. It provides detailed information about each country, including geographical data, cultural insights, and more.
 
-**URL**: https://lovable.dev/projects/4c3e3a7c-a2d5-48f1-a03b-ba6dfccc19a3
+## Features
 
-## How can I edit this code?
+- **Interactive Map**: Navigate through an interactive map to select countries.
+- **Country Details**: View detailed information about selected countries.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Tooltips**: Hover over elements to get additional information without cluttering the interface.
 
-There are several ways of editing your application.
+## Technologies Used
 
-**Use Lovable**
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A superset of JavaScript that adds static types.
+- **Radix UI**: A set of unstyled, accessible components for building high-quality design systems.
+- **React Router**: For routing and navigation within the application.
+- **TanStack Query**: For data fetching and state management.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4c3e3a7c-a2d5-48f1-a03b-ba6dfccc19a3) and start prompting.
+## Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/qharny/globe_explorer.git
+   cd globe_explorer
+   ```
 
-**Use your preferred IDE**
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+4. Open your browser and navigate to `http://localhost:3000`.
 
-Follow these steps:
+## Usage
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Use the navigation to explore different countries.
+- Hover over elements to see tooltips with additional information.
+- Enjoy exploring the globe!
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Contributing
 
-# Step 3: Install the necessary dependencies.
-npm i
+Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## License
 
-**Edit a file directly in GitHub**
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Author
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/4c3e3a7c-a2d5-48f1-a03b-ba6dfccc19a3) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+- **Manasseh Kabutey** - [Your LinkedIn Profile](https://www.linkedin.com/in/manasseh-kabutey)
