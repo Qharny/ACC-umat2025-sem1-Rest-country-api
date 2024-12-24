@@ -3,7 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 import CountryCard from "@/components/CountryCard";
 import SearchBar from "@/components/SearchBar";
 import RegionFilter from "@/components/RegionFilter";
-import { Loader2 } from "lucide-react";
+import { Loader2, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const fetchCountries = async () => {
   const response = await fetch("https://restcountries.com/v3.1/all");
@@ -14,6 +16,7 @@ const fetchCountries = async () => {
 const Index = () => {
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState("all");
+  const navigate = useNavigate();
 
   const { data: countries, isLoading } = useQuery({
     queryKey: ["countries"],
@@ -40,7 +43,17 @@ const Index = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="mb-8 text-4xl font-bold">World Navigator</h1>
+      <div className="mb-8 flex items-center justify-between">
+        <h1 className="text-4xl font-bold">World Navigator</h1>
+        <Button
+          variant="outline"
+          onClick={() => navigate("/favorites")}
+          className="flex items-center gap-2"
+        >
+          <Heart className="h-4 w-4" />
+          Favorites
+        </Button>
+      </div>
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <SearchBar value={search} onChange={setSearch} />
         <RegionFilter value={region} onChange={setRegion} />
