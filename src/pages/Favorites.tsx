@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,7 @@ import { Loader2 } from "lucide-react";
 const fetchFavoriteCountries = async (favorites: string[]) => {
   if (!favorites.length) return [];
   const promises = favorites.map(name =>
-    fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`)
+      fetch(`https://api.countrylayer.com/v2/name/${name}?access_key=a4d457f868eb1a40fb8d235c35f1f3d1`)
       .then(res => res.json())
       .then(data => data[0])
   );
@@ -79,7 +80,7 @@ const Favorites = () => {
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {countries?.map((country) => (
+          {countries?.map((country: any) => (
             <CountryCard key={country.cca3} country={country} />
           ))}
         </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
@@ -5,9 +6,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Loader2, Heart } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
+const API_KEY = "a4d457f868eb1a40fb8d235c35f1f3d1";
+
 const fetchCountry = async (name: string) => {
   const response = await fetch(
-    `https://restcountries.com/v3.1/name/${name}?fullText=true`
+    `https://api.countrylayer.com/v2/name/${name}?access_key=${API_KEY}&fullText=true`
   );
   if (!response.ok) throw new Error("Failed to fetch country");
   const data = await response.json();
@@ -88,47 +91,42 @@ const CountryDetail = () => {
       <div className="grid gap-8 md:grid-cols-2">
         <div className="overflow-hidden rounded-lg">
           <img
-            src={country.flags.png}
-            alt={country.flags.alt || `Flag of ${country.name.common}`}
+            src={country.flag}
+            alt={`Flag of ${country.name}`}
             className="h-full w-full object-cover"
           />
         </div>
 
         <div>
-          <h1 className="mb-4 text-4xl font-bold">{country.name.common}</h1>
+          <h1 className="mb-4 text-4xl font-bold">{country.name}</h1>
           <div className="grid gap-4">
             <div>
-              <h2 className="text-xl font-semibold">Official Name</h2>
-              <p>{country.name.official}</p>
-            </div>
-            <div>
               <h2 className="text-xl font-semibold">Capital</h2>
-              <p>{country.capital?.[0] || "No capital"}</p>
+              <p>{country.capital || "No capital"}</p>
             </div>
             <div>
               <h2 className="text-xl font-semibold">Region</h2>
-              <p>
-                {country.region} ({country.subregion})
-              </p>
+              <p>{country.region}</p>
             </div>
             <div>
               <h2 className="text-xl font-semibold">Population</h2>
-              <p>{country.population.toLocaleString()}</p>
+              <p>{country.population?.toLocaleString() || "N/A"}</p>
             </div>
             <div>
               <h2 className="text-xl font-semibold">Languages</h2>
-              <p>
-                {Object.values(country.languages || {}).join(", ") ||
-                  "No languages"}
-              </p>
+              <p>{country.languages?.join(", ") || "No languages"}</p>
             </div>
             <div>
               <h2 className="text-xl font-semibold">Currencies</h2>
-              <p>
-                {Object.values(country.currencies || {})
-                  .map((currency: any) => currency.name)
-                  .join(", ") || "No currencies"}
-              </p>
+              <p>{country.currencies?.join(", ") || "No currencies"}</p>
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold">Calling Code</h2>
+              <p>{country.callingCodes?.join(", ") || "N/A"}</p>
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold">Top Level Domain</h2>
+              <p>{country.topLevelDomain?.join(", ") || "N/A"}</p>
             </div>
           </div>
         </div>
